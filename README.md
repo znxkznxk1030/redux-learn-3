@@ -281,3 +281,16 @@ const videoSearch = _.debounce((term) => {
     this.videoSearch(term)
 }, 300)
 ```
+
+### Day - 7
+
+####  Redux가 다른 flux 프레임워크와 다른점
+
+* backbone은 collections를 가지고, flux는 다른 store들을 가지고있는데 반해 Redux는 state를 참조하는 한 오브젝트로 집중시킨다.
+
+#### Reducer 란 어플리케이션 스테이트를 반환하는 함수
+
+#### Reducer의 두 스텝
+
+1. 리듀서 만들기
+2. 앱과 연결하기
