@@ -297,8 +297,13 @@ const videoSearch = _.debounce((term) => {
 
 ### Day - 8
 
-#### react-redux | 리액트와 리덕스에 대한 라이브러리
+#### react-redux
 
+리액트와 리덕스에 대한 라이브러리
+
+#### Container
+
+리액트 컴포넌트로서, 리덕스에 의해 관리되는 스테이트에 직접적인 연결이 가능
 
 #### prettierrc 설정
 
@@ -309,4 +314,22 @@ const videoSearch = _.debounce((term) => {
   "semi": false,
   "singleQuote": true
 }
+```
+
+#### Component를 Container로 만들기
+
+1. mapStateToProps 생성
+
+```jsx
+function mapStateToProps (state) {
+    return {
+        books: state.books
+    }
+}
+```
+
+2. connect로 변환하기 ( currying 구조이다.)
+```jsx
+// connect는 currying을 사용한다
+export default connect(mapStateToProps)(BookList)
 ```
