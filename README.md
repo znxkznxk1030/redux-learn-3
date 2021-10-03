@@ -294,3 +294,19 @@ const videoSearch = _.debounce((term) => {
 
 1. 리듀서 만들기
 2. 앱과 연결하기
+
+### Day - 8
+
+#### react-redux | 리액트와 리덕스에 대한 라이브러리
+
+
+#### prettierrc 설정
+
+```json
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true
+}
+```
