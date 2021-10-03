@@ -329,7 +329,50 @@ function mapStateToProps (state) {
 ```
 
 2. connect로 변환하기 ( currying 구조이다.)
+
 ```jsx
 // connect는 currying을 사용한다
 export default connect(mapStateToProps)(BookList)
+```
+
+### Day - 9
+
+#### 리덕스 액션 연결하기
+
+1. ActionCreator 만들기
+
+```js
+// actions/index.js
+
+export function selectBook(book) {
+    // selectBook is an ActionCreator, it needs to return an action,
+    // an object with a type property.
+    return {
+        type: 'BOOK_SELECTED',
+        payload: book
+    }
+}
+```
+
+2. mapDispathToProps 만들기
+
+```jsx
+// containers/book-list.js
+import { bindActionCreators } from 'redux'
+
+function mapDispatchToProps(dispatch) {
+  // Whenever selectBook is called, the result should be passed
+  // to all of our reducers
+
+  return bindActionCreators({ selectBook: selectBook }, dispatch)
+}
+```
+
+3. connect ( 컴포넌트를 컨테이너로 만듦 | react-redux)에 mapDispatchToProps 연결하기
+
+```jsx
+// containers/book-list.js
+import { connect } from 'react-redux'
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList)
 ```
