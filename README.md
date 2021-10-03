@@ -341,7 +341,7 @@ export default connect(mapStateToProps)(BookList)
 
 1. ActionCreator 만들기
 
-```js
+```javascript
 // actions/index.js
 
 export function selectBook(book) {
@@ -354,25 +354,67 @@ export function selectBook(book) {
 }
 ```
 
-2. mapDispathToProps 만들기
+2. ActionCreator을 Props로 바인딩 하기
 
 ```jsx
 // containers/book-list.js
+import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+
+import { selectBook } from '../actions'
 
 function mapDispatchToProps(dispatch) {
   // Whenever selectBook is called, the result should be passed
   // to all of our reducers
 
-  return bindActionCreators({ selectBook: selectBook }, dispatch)
+  return bindActionCreators({ selectBook }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList)
+```
+
+3. Reducer 만들기
+
+* 리듀서 안에선 절대 state를 직접 변환시키면 안된다.
+
+```javascript
+// State argument is not application state, only the state
+export default function(state = null, action) {
+    switch (action.type) {
+        case 'BOOK_SELECTED':
+            return action.payload
+    }
+
+    return state
 }
 ```
 
-3. connect ( 컴포넌트를 컨테이너로 만듦 | react-redux)에 mapDispatchToProps 연결하기
+4. 상태를 props로 가져오기
 
 ```jsx
-// containers/book-list.js
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookList)
+class BookDetail extends Component {
+  render() {
+    if (!this.props.book) {
+      return <div>Select a book to get started.</div>
+    }
+    return (
+      <div>
+        <h3>Details for:</h3>
+        <div>{this.props.book.title}</div>
+      </div>
+    )
+  }
+}
+
+function mapStateToProps(state) {
+  return {
+    book: state.activeBook,
+  }
+}
+
+export default connect(mapStateToProps)(BookDetail)
+
 ```
