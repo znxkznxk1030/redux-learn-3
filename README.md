@@ -575,3 +575,12 @@ export default function (state = null, action) {
 1. inline이나 inline-block 에서만 적용
 2. 요소 자체만 정렬, 내용에 영향 X ( table cell에 적용할 때는 제외)
 3. 다른 요소에 상대적으로 정렬함
+
+### Day - 14
+
+#### CRUD 테스트 하기 좋은 서비스
+##### https://reduxblog.herokuapp.com
+- GET | https://reduxblog.herokuapp.com/api/posts?key={random string}
+- POST | https://reduxblog.herokuapp.com/api/posts?key={random string}
+- POST | https://reduxblog.herokuapp.com/api/posts/5?key={random string}
+- DELETE | https://reduxblog.herokuapp.com/api/posts/5?key={random string}
