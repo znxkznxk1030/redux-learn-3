@@ -579,8 +579,11 @@ export default function (state = null, action) {
 ### Day - 14
 
 #### CRUD 테스트 하기 좋은 서비스
-##### https://reduxblog.herokuapp.com
+- https://reduxblog.herokuapp.com
 - GET | https://reduxblog.herokuapp.com/api/posts?key={random string}
 - POST | https://reduxblog.herokuapp.com/api/posts?key={random string}
 - POST | https://reduxblog.herokuapp.com/api/posts/5?key={random string}
 - DELETE | https://reduxblog.herokuapp.com/api/posts/5?key={random string}
+
+#### What React Router Does
+-  Web Pages => History => React-Router => React => Web Pages
