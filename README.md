@@ -579,11 +579,34 @@ export default function (state = null, action) {
 ### Day - 14
 
 #### CRUD 테스트 하기 좋은 서비스
+
 - https://reduxblog.herokuapp.com
 - GET | https://reduxblog.herokuapp.com/api/posts?key={random string}
 - POST | https://reduxblog.herokuapp.com/api/posts?key={random string}
 - POST | https://reduxblog.herokuapp.com/api/posts/5?key={random string}
 - DELETE | https://reduxblog.herokuapp.com/api/posts/5?key={random string}
 
+### Day - 15
+
 #### What React Router Does
--  Web Pages => History => React-Router => React => Web Pages
+
+- Web Pages => History => React-Router => React => Web Pages
+
+#### router 적용하기
+
+- import BrowserRouter, Route
+
+```jsx
+import { BrowserRouter, Route } from 'react-router-dom'
+
+ReactDOM.render(
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <BrowserRouter>
+      <div>
+        <Route path="/hello" component={Hello} />
+        <Route path="/goodbye" component={Goodbye} />
+      </div>
+    </BrowserRouter>
+  </Provider>,
+  document.querySelector('.container')
+```
