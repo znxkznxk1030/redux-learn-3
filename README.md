@@ -610,3 +610,19 @@ ReactDOM.render(
   </Provider>,
   document.querySelector('.container')
 ```
+
+#### lodash | mapKeys
+
+```javascript
+const posts = [
+  { id: 4, title: 'hi' },
+  { id: 7, title: 'bye' },
+]
+
+_.mapKeys{posts, 'id'}
+
+{
+  4: { id: 4, title: 'hi' },
+  7: { id: 7, title: 'bye' },
+}
+```
