@@ -640,3 +640,31 @@ renderPosts() {
     })
   }
 ```
+
+#### Switch | React Router 의 loose Match
+
+아래와 같은 설정시, PostIndex와 PostNew 컴포넌트 둘 다 중복해서 화면에 출력된다.
+
+```jsx
+<BrowserRouter>
+  <div>
+    <Route path="/" component={PostsIndex} />
+    <Route path="/posts/new" component={postNew} />
+  </div>
+</BrowserRouter>
+```
+
+이를 해결하기 위해 Switch 컴포넌트를 아래와 같이 사용한다.
+
+```jsx
+<BrowserRouter>
+  <div>
+    <Switch>
+      <Route path="/posts/new" component={postNew} />
+      <Route path="/" component={PostsIndex} />
+    </Switch>
+  </div>
+</BrowserRouter>
+```
+
+- 먼저 매칭되는 path를 상단에 두어야 한다
