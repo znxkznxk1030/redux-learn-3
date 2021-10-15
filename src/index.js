@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from 'redux'
 import { BrowserRouter, Route } from 'react-router-dom'
 import ReduxPromise from 'redux-promise'
 
-import App from './components/app'
 import reducers from './reducers'
 import PostsIndex from './components/post-index'
 
