@@ -626,3 +626,17 @@ _.mapKeys{posts, 'id'}
   7: { id: 7, title: 'bye' },
 }
 ```
+
+#### Object 렌더하기
+
+```jsx
+renderPosts() {
+    return _.map(this.props.posts, (post) => {
+      return (
+        <li className="list-group-item" key={post.id}>
+          {post.title}
+        </li>
+      )
+    })
+  }
+```
