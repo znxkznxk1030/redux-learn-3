@@ -668,3 +668,13 @@ renderPosts() {
 ```
 
 - 먼저 매칭되는 path를 상단에 두어야 한다
+
+#### Link tag
+
+```jsx
+<div className="text-tx-right">
+  <Link className="btn btn-primary" to="/posts/new">
+    Add a Post
+  </Link>
+</div>
+```
