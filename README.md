@@ -704,3 +704,15 @@ renderPosts() {
   <input className="form-control" type="text" {...field.input} />
 </div>
 ```
+
+#### validate
+
+- value의 값 ( 이벤트 emit할 때마다, 갱신된다. )
+
+```json
+{
+  "title": "here",
+  "categories": "is",
+  "content": "validate"
+}
+```
