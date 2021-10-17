@@ -682,8 +682,25 @@ renderPosts() {
 ### Day - 17
 
 #### Redux Form
+
 - https://redux-form.com/8.3.0/
 
+#### Field 파라미터에 속성추가
 
+- 아무이름의 변수를 Field의 Props로 넘김
 
+```jsx
+<form>
+  <Field label="Title" name="title" component={this.renderField}></Field>
+  <Field label="Title" name="tags" component={this.renderField}></Field>
+</form>
+```
 
+- component 내부에서 field의 속성으로 이용
+
+```jsx
+<div className="form-group">
+  <label htmlFor="">{field.label}</label>
+  <input className="form-control" type="text" {...field.input} />
+</div>
+```
