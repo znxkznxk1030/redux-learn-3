@@ -716,3 +716,18 @@ renderPosts() {
   "content": "validate"
 }
 ```
+
+#### Submit
+
+```jsx
+render() {
+    const { handleSubmit } = this.props
+    return (
+      <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+```
+
+```jsx
+  onSubmit(values) {
+    console.log(values)
+  }
+```
