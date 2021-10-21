@@ -731,3 +731,19 @@ render() {
     console.log(values)
   }
 ```
+
+### Day - 20
+
+#### lodash 를 이용한 객체삭제
+
+- omit
+
+```jsx
+_.omit(state, action.payload)
+```
+
+- reject
+
+```jsx
+_.reject(state, (post) => post === action.payload)
+```
