@@ -747,3 +747,25 @@ _.omit(state, action.payload)
 ```jsx
 _.reject(state, (post) => post === action.payload)
 ```
+
+### Day - 21
+
+#### 왜 redux-thunk가 존재하는지?
+
+- Dispatch를 컨트롤 하기위해
+
+##### Dispatch
+
+- action이 각 reducer에게 보내지도록 하는 것
+
+```javascript
+export function fetchUsers() {
+  const request = axios.get(URL)
+
+  return (dispatch) => {
+    request.then(({ data }) => {
+      dispatch({ type: 'FETCH_PROFILES', payload: data })
+    })
+  }
+}
+```
